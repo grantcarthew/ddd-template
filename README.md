@@ -4,12 +4,14 @@ A template repository for building software projects where design decisions come
 
 ## What is Documentation Driven Development?
 
-Documentation Driven Development is a development approach where you:
+Documentation Driven Development (DDD) is an approach where design decisions are captured in documentation before (or during) implementation. While the term was originally used in 2004 academic research for real-time systems using formal specifications (Luqi et al.), this template takes a different approach: capturing design decisions in human-readable Design Records for modern software development with AI agent collaboration.
 
-1. **Think first, code later** - Make explicit design decisions before implementation
-2. **Document the "why"** - Capture not just what you built, but why you chose that approach
-3. **Create Design Records (DRs)** - Formal documents for each significant technical decision
-4. **Build institutional memory** - Future developers (including AI agents) understand the reasoning behind choices
+In practice, this means you:
+
+1. Think first, code later - Make explicit design decisions before implementation
+2. Document the "why" - Capture not just what you built, but why you chose that approach
+3. Create Design Records (DRs) - Formal documents for each significant technical decision
+4. Build institutional memory - Future developers (including AI agents) understand the reasoning behind choices
 
 Unlike traditional "documentation after the fact," DDD makes documentation a first-class part of the design process.
 
