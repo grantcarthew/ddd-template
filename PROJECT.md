@@ -1,218 +1,126 @@
-# Document Driven Development (DDD) Template - Bootstrap Guide
+# Documentation Driven Development (DDD) Template - Bootstrap Guide
 
 This document guides AI agents through bootstrapping a new DDD project structure.
 
-**IMPORTANT:** Read `docs/design/dr-writing-guide.md` before continuing. That guide defines how to write Design Records. This guide defines how to bootstrap the project structure.
+**IMPORTANT:** Read these documents in order before continuing:
+
+1. `AGENTS.md` - Review the template structure you'll be populating
+2. `docs/design/dr-writing-guide.md` - Understand what Design Records are
+
+This guide defines how to bootstrap the minimal project structure to begin the design phase.
 
 ---
 
-## Phase 1: Bootstrap Tasks
+## Phase 0: Bootstrap Tasks
 
 ### Step 1: Gather Project Information
 
-Ask the user these questions to understand what structure to create:
+Have an interactive conversation with the user to understand the project. Tailor your questions based on their answers.
 
-**Essential:**
+Start with the essentials:
 
-- What is the project name?
-- What type of project is this? (Examples: CLI tool, web application, library, API service, mobile app, game, embedded system, desktop application, etc.)
-- What programming language(s)?
-- Brief description (1-2 sentences)?
+- Project name
+- Project type (CLI tool, library, web app, API, mobile app, etc.)
+- Programming language(s)
+- Brief description (1-2 sentences)
 
-**Documentation needs:**
+Then explore based on project type:
 
-- Does this project need CLI command documentation?
-- Does this project need API/endpoint documentation?
-- Does this project need architecture documentation?
-- Does this project need user guides/tutorials?
-- Any other specific documentation types?
+Depending on what kind of project this is, you'll need different information. Ask intelligent follow-up questions. For example:
 
-**Development workflow:**
+- CLI tools → Command structure, subcommands, configuration
+- Libraries → API surface, usage examples, integration points
+- Web applications → Frontend/backend architecture, API endpoints, deployment
+- APIs → Endpoints, authentication, request/response formats
 
-- How do you install/setup the project?
-- How do you run it in development?
-- How do you run tests?
-- How do you build for production?
-- Any code style guidelines?
+Development workflow:
 
-### Step 2: Create Directory Structure
+Ask about their development process:
 
-Based on answers from Step 1, create the appropriate directories:
+- Setup/installation steps
+- Running in development
+- Testing approach
+- Build process
+- Code style preferences (if any)
 
-**Always create:**
+Documentation needs:
+
+Based on the project type, determine what documentation makes sense. Examples:
+
+- User guides for end-user facing projects
+- API docs for libraries/services
+- Architecture docs for complex systems
+- CLI reference for command-line tools
+
+Adapt your questions as the conversation unfolds.
+
+### Step 2: Create Project-Specific Directory Structure
+
+The template already includes the core DDD structure:
+
+- `docs/archive/` - For archived PROJECT.md files and historical content
+- `docs/design/` - For design decisions and Design Records
+- `docs/design/design-records/` - For individual DR files
+- `docs/templates/` - Phase templates for PROJECT.md lifecycle
+- `docs/thoughts.md` - Free-form brainstorming and ideas
+
+Based on the conversation in Step 1, create additional directories as needed for this specific project:
 
 ```bash
-mkdir -p docs/design/design-records
-mkdir -p docs/guides
-mkdir -p docs/ideas
-```
+# Examples based on project type:
 
-**Conditionally create:**
-
-```bash
-# If CLI documentation needed:
+# If CLI tool with extensive commands:
 mkdir -p docs/cli
 
-# If API documentation needed:
+# If library or API service:
 mkdir -p docs/api
 
-# If architecture documentation needed:
+# If complex system needing architecture diagrams:
 mkdir -p docs/architecture
+
+# If user-facing product needing guides:
+mkdir -p docs/guides
 ```
 
-### Step 3: Populate AGENTS.md
+Only create directories that make sense for this project. The agent and user will determine what's needed during Step 1.
 
-Update the existing AGENTS.md template with information gathered in Step 1:
+### Step 3: Populate AGENTS.md (Minimally)
 
-**Replace placeholders:**
+IMPORTANT: AGENTS.md should remain minimal during bootstrap to avoid churn. It will naturally grow and evolve throughout the design and implementation phases as the project matures. Only add what you know from Step 1.
+
+Update only these parts:
 
 - `[Project Name]` → Actual project name
-- TODO in project description → Actual description
-- TODO in Setup section → Actual setup commands
-- TODO in Development section → Actual dev commands
-- TODO in Code Style section → Actual style guidelines
-- TODO in Testing section → Actual test instructions
-- TODO in Pull Requests section → Actual PR guidelines (if applicable)
+- `TODO: Brief project description` → The 1-2 sentence description from Step 1
+- Leave "Quick Reference" as TODO - it will be populated during design/implementation
+- Keep everything else unchanged
 
-**Keep the DDD section at the bottom unchanged.**
+The AGENTS.md document will be enriched later:
 
-### Step 4: Create Core DDD Files
+- Design phase: Add architecture decisions, design patterns, key DRs
+- Implementation phase: Add setup commands, development workflow, code structure
+- Near completion: Fully detailed following https://agents.md/ specification
 
-Copy and generate these files:
+Do NOT try to fill in details that aren't yet known. Premature detail causes unnecessary updates as decisions change.
 
-#### File: `docs/design/dr-writing-guide.md`
+### Step 4: Create Project-Specific Documentation Stubs
 
-Copy from template location: `docs/design/dr-writing-guide.md` (in same directory tree as this PROJECT.md)
+For each project-specific directory created in Step 2, create a README.md file to explain its purpose and structure.
 
-This is the complete guide for writing Design Records.
-
-#### File: `docs/design/README.md`
-
-```markdown
-# Design Documentation
-
-This directory contains design decisions and technical documentation.
-
-## Design Records (DRs)
-
-Design Records document significant technical decisions made during development. They serve as the single source of truth for architectural choices, algorithms, and design trade-offs.
-
-**Location:** `design-records/`
-
-**Writing guidelines:** See [dr-writing-guide.md](dr-writing-guide.md)
-
-**Index:** See [design-records/README.md](design-records/README.md) for complete list.
-
-## Quick Decision Log
-
-_Update this list when adding significant DRs_
-```
-
-#### File: `docs/design/design-records/README.md`
-
-```markdown
-# Design Records Index
-
-This directory contains Design Records (DRs) - formal documentation of significant technical decisions.
-
-## What are Design Records?
-
-Design Records document the **why** behind technical decisions. They capture:
-
-- The context and problem being solved
-- The decision made
-- Alternatives considered
-- Trade-offs and consequences
-
-For DR writing guidelines, see [../dr-writing-guide.md](../dr-writing-guide.md)
-
-## Active DRs
-
-| Number | Title | Status | Date |
-| ------ | ----- | ------ | ---- |
-| -      | -     | -      | -    |
-
-## Superseded DRs
-
-| Number | Title | Superseded By | Date |
-| ------ | ----- | ------------- | ---- |
-| -      | -     | -             | -    |
-
-## Deprecated DRs
-
-| Number | Title | Reason | Date |
-| ------ | ----- | ------ | ---- |
-| -      | -     | -      | -    |
-```
-
-#### File: `docs/guides/getting-started.md` (if applicable)
-
-```markdown
-# Getting Started with [Project Name]
-
-TODO: Quick start guide for new users
-
-## Prerequisites
-
-- List requirements
-
-## Installation
-
-\`\`\`bash
-
-# Installation commands
-
-\`\`\`
-
-## Quick Start
-
-\`\`\`bash
-
-# Basic usage examples
-
-\`\`\`
-
-## Next Steps
-
-- Link to relevant documentation
-- Common workflows
-```
-
-#### File: `docs/ideas/README.md`
-
-```markdown
-# Ideas and Future Work
-
-This directory contains exploratory ideas, brainstorming, and future concepts that aren't yet formal Design Records.
-
-## When to use this directory
-
-- Brainstorming new features
-- Exploring alternative approaches
-- Documenting "maybe someday" ideas
-- Sketching out concepts before formal DR
-
-## When to move to Design Records
-
-When an idea becomes a concrete decision that will be implemented, create a formal DR in `design-records/`.
-```
-
-### Step 5: Create Type-Specific Documentation
-
-**If CLI documentation needed**, create `docs/cli/README.md`:
+CLI Documentation (if `docs/cli/` was created):
 
 ```markdown
 # CLI Command Reference
 
 Complete reference for all [Project Name] commands.
 
-## Command Index
+## Commands
 
-- `command` - Brief description
+TODO: List commands as they are designed/implemented
 
-## Command Format
+## Documentation Format
 
-Each command is documented in its own file following this structure:
+Each command will be documented with:
 
 - Usage and syntax
 - Description
@@ -221,7 +129,7 @@ Each command is documented in its own file following this structure:
 - Related commands
 ```
 
-**If API documentation needed**, create `docs/api/README.md`:
+API Documentation (if `docs/api/` was created):
 
 ```markdown
 # API Reference
@@ -230,22 +138,14 @@ Complete reference for [Project Name] API.
 
 ## Endpoints
 
-- `GET /endpoint` - Brief description
+TODO: Document endpoints as they are designed/implemented
 
-## Authentication
+## Common Patterns
 
-TODO: Authentication mechanism
-
-## Rate Limiting
-
-TODO: Rate limiting policy (if applicable)
-
-## Response Format
-
-TODO: Standard response format
+TODO: Authentication, error handling, request/response formats as they are decided
 ```
 
-**If architecture documentation needed**, create `docs/architecture.md`:
+Architecture Documentation (if `docs/architecture/` was created):
 
 ```markdown
 # Architecture
@@ -254,22 +154,36 @@ High-level architecture and system design for [Project Name].
 
 ## Overview
 
-TODO: System architecture overview
+TODO: System architecture overview (add during design phase)
 
 ## Components
 
-TODO: Major components and their responsibilities
-
-## Data Flow
-
-TODO: How data flows through the system
+TODO: Major components and their responsibilities (add during design phase)
 
 ## Design Decisions
 
-See [design/design-records/](design/design-records/) for detailed design decisions.
+See [design/design-records/](../design/design-records/) for detailed design decisions.
 ```
 
-### Step 6: Update README.md
+User Guides (if `docs/guides/` was created):
+
+```markdown
+# User Guides
+
+Guides and tutorials for using [Project Name].
+
+## Getting Started
+
+TODO: Quick start guide (add during implementation phase)
+
+## Guides
+
+TODO: Add specific guides as features are implemented
+```
+
+Adapt these templates based on what makes sense for this specific project.
+
+### Step 5: Update README.md
 
 Ensure the project's main README.md references the new documentation structure:
 
@@ -285,47 +199,69 @@ Complete documentation is available in the `docs/` directory:
 For AI agents working on this project, see [AGENTS.md](AGENTS.md).
 ```
 
-### Step 7: Verify Bootstrap Complete
+### Step 6: Verify Bootstrap Complete
 
 Confirm all files are created:
 
-**Essential files:**
+Essential files (already in template):
 
-- [x] `AGENTS.md` - Populated with project information
+- [x] `AGENTS.md` - Populated with project name and description
 - [x] `docs/design/dr-writing-guide.md` - DR writing guidelines
-- [x] `docs/design/README.md`
+- [x] `docs/design/README.md` - Design documentation intro
 - [x] `docs/design/design-records/README.md` - DR index
-- [x] `docs/ideas/README.md`
+- [x] `docs/thoughts.md` - Brainstorming space
 
-**Conditional files:**
+Conditional files (based on Step 1 conversation). Some examples might be:
 
 - [ ] `docs/cli/README.md` (if CLI project)
 - [ ] `docs/api/README.md` (if API project)
-- [ ] `docs/architecture.md` (if architecture docs needed)
-- [ ] `docs/guides/getting-started.md` (if user guides needed)
+- [ ] `docs/architecture/README.md` (if complex architecture)
+- [ ] `docs/guides/README.md` (if user guides needed)
 
-**README updated:**
+README updated:
 
 - [ ] Main README.md references docs/ structure
 
-### Step 8: Report to User
+### Step 7: Report to User and Transition
 
-Provide summary of created structure:
+Provide summary of created structure, then transition to design phase:
 
 ```
 ✓ DDD project structure initialized
 
-Created:
-- DR writing guide (docs/design/dr-writing-guide.md)
-- Design Records system (docs/design/design-records/)
-- DR index (docs/design/design-records/README.md)
-- Ideas directory (docs/ideas/)
-[List conditional directories created]
+Template structure:
+- AGENTS.md updated with project basics
+- Design Records system ready (docs/design/design-records/)
+- DR writing guide available (docs/design/dr-writing-guide.md)
+- Thoughts document for brainstorming (docs/thoughts.md)
+- Archive directory for completed phases (docs/archive/)
 
-Next steps:
-1. Read docs/design/dr-writing-guide.md
-2. Start documenting design decisions as DRs
-3. Run documentation reconciliation after ~5-10 DRs
-
-Ready to begin design phase.
+[List any project-specific directories created]
 ```
+
+Now transition to design phase:
+
+1. Archive this bootstrap PROJECT.md:
+   ```bash
+   cp PROJECT.md docs/archive/$(date +%Y-%m-%d)-bootstrap.md
+   ```
+
+2. Copy design phase template:
+   ```bash
+   cp docs/templates/PROJECT-phase1-design.md PROJECT.md
+   ```
+
+3. Update the new PROJECT.md with project details from Step 1:
+   - Replace `[Project Name]` with actual project name (in title and Project Overview section)
+   - Replace `[Type]` with project type (CLI tool, library, web app, etc.)
+   - Replace `[Languages]` with programming languages
+   - Replace `[Description]` with the 1-2 sentence description
+   - Set `[Started]` to today's date (YYYY-MM-DD format)
+   - Set `[Last Updated]` to today's date (YYYY-MM-DD format)
+
+4. Report to user:
+   ```
+   Bootstrap phase complete. PROJECT.md has been updated for design phase.
+
+   Ready to begin creating Design Records.
+   ```

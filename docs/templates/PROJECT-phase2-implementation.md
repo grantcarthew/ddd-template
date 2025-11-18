@@ -1,32 +1,31 @@
 # [Project Name] - Implementation Phase
 
-**Phase:** Implementation
-**Status:** In Progress
-**Started:** [Date]
-**Last Updated:** [Date]
+Phase: Implementation
+Started: [Date]
+Last Updated: [Date]
 
 This document guides AI agents through the implementation phase of this project using Documentation Driven Development (DDD).
 
-**IMPORTANT:** All design decisions have been documented as Design Records (DRs) in `docs/design/design-records/`. Implementation must follow these decisions.
+IMPORTANT: All design decisions have been documented as Design Records (DRs) in `docs/design/design-records/`. Implementation must follow these decisions.
 
 ---
 
 ## Project Overview
 
-**Project Name:** [Project Name]
-**Type:** [CLI tool / web application / library / API service / etc.]
-**Languages:** [Programming language(s)]
-**Description:** [1-2 sentence description]
+Project Name: [Project Name]
+Type: [CLI tool / web application / library / API service / etc.]
+Languages: [Programming language(s)]
+Description: [1-2 sentence description]
 
 ## Implementation Phase Objectives
 
 The implementation phase translates design decisions into working code. You will:
 
-1. **Read all DRs** to understand design decisions and rationale
-2. **Implement according to DRs** - Follow the decisions that were made
-3. **Reference DRs in code** - Link code to the decisions that drove it
-4. **Flag design gaps** - Identify when implementation needs a decision that wasn't made
-5. **Deliver working software** - Build the system as designed
+1. Read all DRs to understand design decisions and rationale
+2. Implement according to DRs - Follow the decisions that were made
+3. Reference DRs in code - Link code to the decisions that drove it
+4. Flag design gaps - Identify when implementation needs a decision that wasn't made
+5. Deliver working software - Build the system as designed
 
 ## How to Work in Implementation Phase
 
@@ -34,40 +33,40 @@ The implementation phase translates design decisions into working code. You will
 
 You are here to:
 
-- **Implement the design** - Write code that realizes the DRs
-- **Follow decisions** - Don't second-guess design choices (they're in DRs)
-- **Ask when unclear** - If a DR is ambiguous, ask for clarification
-- **Reference DRs** - Add comments linking code to relevant DRs
-- **Identify gaps** - If you need a decision that wasn't made, flag it
-- **Write tests** - Follow the testing strategy from DRs
-- **Maintain quality** - Follow code style and best practices from DRs
+- Implement the design - Write code that realizes the DRs
+- Follow decisions - Don't second-guess design choices (they're in DRs)
+- Ask when unclear - If a DR is ambiguous, ask for clarification
+- Reference DRs - Add comments linking code to relevant DRs
+- Identify gaps - If you need a decision that wasn't made, flag it
+- Write tests - Follow the testing strategy from DRs
+- Maintain quality - Follow code style and best practices from DRs
 
 ### Implementation Session Workflow
 
-1. **Read design context**
+1. Read design context
    - Review all DRs before starting
    - Understand the complete system design
    - Identify key decisions that affect your current task
 
-2. **Plan implementation**
+2. Plan implementation
    - Break down into implementable units
    - Identify dependencies
    - Determine implementation order
 
-3. **Implement**
+3. Implement
    - Write code following DR decisions
    - Add comments referencing relevant DRs (e.g., `// See DR-042 for rationale`)
    - Follow established patterns from DRs
 
-4. **Test**
+4. Test
    - Write tests according to testing strategy DRs
    - Ensure tests cover decision points
 
-5. **Review against DRs**
+5. Review against DRs
    - Verify implementation matches design decisions
    - Check that all DR requirements are met
 
-6. **Update status**
+6. Update status
    - Mark tasks complete in this PROJECT.md
    - Document any new DRs if implementation reveals needed decisions
    - Keep PROJECT.md current for next session
@@ -79,15 +78,15 @@ If you encounter a situation where:
 - Existing DR is ambiguous or incomplete
 - Implementation reveals a design gap
 
-**Do this:**
+Do this:
 
-1. **Stop implementation** of that specific part
-2. **Document the question** - What decision is needed?
-3. **Ask the user** - Present the question and options
-4. **Create a DR** - Document the decision (even in implementation phase)
-5. **Resume implementation** - Continue with the new decision
+1. Stop implementation of that specific part
+2. Document the question - What decision is needed?
+3. Ask the user - Present the question and options
+4. Create a DR - Document the decision (even in implementation phase)
+5. Resume implementation - Continue with the new decision
 
-**Note:** Small implementation details don't need DRs. Only create new DRs for decisions with alternatives, trade-offs, or lasting impact.
+Note: Small implementation details don't need DRs. Only create new DRs for decisions with alternatives, trade-offs, or lasting impact.
 
 ## Design Decisions Reference
 
@@ -95,7 +94,7 @@ If you encounter a situation where:
 
 See `docs/design/design-records/README.md` for complete index.
 
-**Critical DRs for Implementation:**
+Critical DRs for Implementation:
 
 | DR # | Title | Category | Why Critical |
 | ---- | ----- | -------- | ------------ |
@@ -106,31 +105,47 @@ _Update this table to highlight DRs that are especially important for implementa
 ### Design Summary by Area
 
 #### Architecture
-- **DR-XXX:** [Key architectural decision]
-- **DR-XXX:** [Key architectural decision]
+- DR-XXX: [Key architectural decision]
+- DR-XXX: [Key architectural decision]
 
 #### Technology Stack
-- **DR-XXX:** [Framework/library choice]
-- **DR-XXX:** [Database/storage choice]
-- **DR-XXX:** [Build/tooling choice]
+- DR-XXX: [Framework/library choice]
+- DR-XXX: [Database/storage choice]
+- DR-XXX: [Build/tooling choice]
 
 #### Core Models/Entities
-- **DR-XXX:** [Data model decision]
-- **DR-XXX:** [Entity relationship decision]
+- DR-XXX: [Data model decision]
+- DR-XXX: [Entity relationship decision]
 
 #### Key Workflows
-- **DR-XXX:** [Main workflow design]
-- **DR-XXX:** [Error handling strategy]
+- DR-XXX: [Main workflow design]
+- DR-XXX: [Error handling strategy]
 
 #### Testing Strategy
-- **DR-XXX:** [Testing approach]
-- **DR-XXX:** [Test coverage goals]
+- DR-XXX: [Testing approach]
+- DR-XXX: [Test coverage goals]
 
 #### Deployment
-- **DR-XXX:** [Deployment strategy]
-- **DR-XXX:** [Environment setup]
+- DR-XXX: [Deployment strategy]
+- DR-XXX: [Environment setup]
 
-_Update these sections with actual DR numbers and titles as you populate this document_
+#### Security
+- DR-XXX: [Auth/authorization decision]
+- DR-XXX: [Data protection approach]
+
+#### Performance/Scalability
+- DR-XXX: [Caching strategy]
+- DR-XXX: [Scaling approach]
+
+#### Data Management
+- DR-XXX: [Data lifecycle]
+- DR-XXX: [Backup/recovery]
+
+#### Integration
+- DR-XXX: [External API decisions]
+- DR-XXX: [Dependency management]
+
+_Update these sections with actual DR numbers and titles as you populate this document. Omit sections that aren't applicable to your project._
 
 ## Implementation Status
 
@@ -145,12 +160,12 @@ _Update these sections with actual DR numbers and titles as you populate this do
 
 ### Core Implementation
 
-**Module/Component:** [Component Name]
+Module/Component: [Component Name]
 - [ ] Task 1
 - [ ] Task 2
 - [ ] Task 3
 
-**Module/Component:** [Component Name]
+Module/Component: [Component Name]
 - [ ] Task 1
 - [ ] Task 2
 - [ ] Task 3
@@ -182,18 +197,18 @@ _Organize by components/modules/features as appropriate for your project_
 
 ### What We're Working On Now
 
-**Current Task:** [Specific task being implemented]
+Current Task: [Specific task being implemented]
 
-**Related DRs:**
+Related DRs:
 - DR-XXX: [Title] - [Why it matters for this task]
 - DR-XXX: [Title] - [Why it matters for this task]
 
-**Progress:**
+Progress:
 - [x] Completed step
 - [ ] In progress step
 - [ ] Pending step
 
-**Blockers:**
+Blockers:
 - [Description of any blockers]
 
 ### Next Up
@@ -208,27 +223,27 @@ After current task completes:
 
 ### Development Environment
 
-**Prerequisites:**
+Prerequisites:
 - [Requirement 1]
 - [Requirement 2]
 - [Requirement 3]
 
-**Setup Steps:**
+Setup Steps:
 ```bash
 # Installation commands
 ```
 
-**Running in Development:**
+Running in Development:
 ```bash
 # Development commands
 ```
 
-**Running Tests:**
+Running Tests:
 ```bash
 # Test commands
 ```
 
-**Building for Production:**
+Building for Production:
 ```bash
 # Build commands
 ```
@@ -250,7 +265,7 @@ _Update with actual project structure_
 
 ### Code Style Guidelines
 
-**See DR-XXX for complete code style decisions**
+See DR-XXX for complete code style decisions
 
 Key points:
 - [Style guideline 1]
@@ -261,21 +276,21 @@ Key points:
 
 ### Reading Order
 
-1. **This document (PROJECT.md)** - Current implementation context and status
-2. **docs/design/design-records/README.md** - Index of all design decisions
-3. **All DRs in docs/design/design-records/** - Complete design (critical!)
-4. **AGENTS.md** - General agent guidance and project info
-5. **Existing codebase** - What's already implemented
+1. This document (PROJECT.md) - Current implementation context and status
+2. docs/design/design-records/README.md - Index of all design decisions
+3. All DRs in docs/design/design-records/ - Complete design (critical!)
+4. AGENTS.md - General agent guidance and project info
+5. Existing codebase - What's already implemented
 
 ### Agent Instructions
 
-**When starting an implementation session:**
+When starting an implementation session:
 - Read all DRs (or at minimum, the critical ones listed above)
 - Review "Current Focus" section for context
 - Check "Implementation Status" to see what's done
 - Ask user what to work on, or continue from "Next Up"
 
-**During implementation:**
+During implementation:
 - Keep DRs in mind - implement according to decisions
 - Add comments linking code to DRs when implementing decision points
   ```python
@@ -286,13 +301,13 @@ Key points:
 - Write clean, maintainable code following project guidelines
 - Write tests as you go (don't leave for later)
 
-**After implementing:**
+After implementing:
 - Update "Implementation Status" checkboxes
 - Update "Current Focus" section
 - Update "Next Up" section
 - Ensure next agent knows what to work on
 
-**Session continuity:**
+Session continuity:
 - Update "Last Updated" date at top of this document
 - Ensure PROJECT.md reflects current state
 - If you create new DRs (for gaps), update DR index
@@ -301,7 +316,7 @@ Key points:
 
 When implementing a decision point, add a comment:
 
-**Good examples:**
+Good examples:
 ```python
 # Singleton pattern for database connection (DR-015)
 class DatabaseConnection:
@@ -318,7 +333,7 @@ async function fetchWithRetry(url, maxRetries = 3) {
 jobs := make(chan Job, 100)
 ```
 
-**When to add DR references:**
+When to add DR references:
 - Architectural patterns
 - Algorithm choices
 - Error handling approaches
@@ -341,18 +356,19 @@ Before marking a component complete:
 
 Sometimes implementation reveals that a design decision needs revision. If this happens:
 
-1. **Don't just change it** - The DR exists for a reason
-2. **Discuss with user** - Explain why the decision doesn't work
-3. **Create new DR** - Document the new decision and mark old one as superseded
-4. **Update code** - Implement the new decision
-5. **Update DR index** - Reflect the superseding relationship
+1. Don't just change it - The DR exists for a reason
+2. Discuss with user - Explain why the decision doesn't work
+3. Create new DR - Document the new decision
+4. Move old DR - Move the old DR file to docs/design/design-records/superseded/
+5. Update DR index - Reflect the superseding relationship in docs/design/design-records/README.md
+6. Update code - Implement the new decision
 
 ---
 
 ## Resources
 
-- **DR Index:** `docs/design/design-records/README.md`
-- **DR Writing Guide:** `docs/design/dr-writing-guide.md`
-- **Agent Guide:** `AGENTS.md`
-- **Code:** [Link to main source directory]
-- **Tests:** [Link to test directory]
+- DR Index: `docs/design/design-records/README.md`
+- DR Writing Guide: `docs/design/dr-writing-guide.md`
+- Agent Guide: `AGENTS.md`
+- Code: [Link to main source directory]
+- Tests: [Link to test directory]
