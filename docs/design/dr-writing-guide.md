@@ -205,8 +205,10 @@ Instead: Use `design-records/README.md` index.
 Exception: Link when status changes (superseding/superseded):
 
 ```markdown
-Status: Superseded by [DR-042](./dr-042-new-approach.md)
+Status: Superseded by [DR-042](../dr-042-new-approach.md)
 ```
+
+Note: Superseded DRs are moved to the `superseded/` directory, so they link back up to the main directory using `../`
 
 ### ❌ User Documentation Duplication
 
@@ -347,13 +349,18 @@ JSON:
 
 ---
 
-## Reconciliation Process
+## Keeping Documentation Current
 
-After 5-10 DRs or significant design changes:
+Update as changes occur:
+
+1. Update DR index immediately when creating, superseding, or deprecating DRs
+2. Update DR status when decisions are implemented (Proposed → Accepted)
+3. Move superseded DRs to `superseded/` directory and update index
+4. Remove completed TODOs as work progresses
+
+Periodic review (when convenient):
 
 1. Remove deprecated references: `rg "old-pattern" docs/`
-2. Update DR index in `design-records/README.md` with current status
-3. Check DR status accuracy (Proposed → Accepted, Deprecated, Superseded?)
-4. Remove stale TODOs: `rg "TODO|TBD|to be written" docs/`
-5. Verify examples match current schema
-6. Remove any "Related Decisions" sections from DRs
+2. Verify DR index matches actual files in `design-records/`
+3. Check for stale TODOs: `rg "TODO|TBD|to be written" docs/`
+4. Verify examples in DRs still match current implementation
