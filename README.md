@@ -21,34 +21,14 @@ Unlike traditional "documentation after the fact," DDD makes documentation a fir
 - **Team alignment** - Everyone understands not just what was built, but why
 - **Knowledge preservation** - Critical context survives beyond the original developers
 
-## How It Works
-
-This template guides you through three phases:
-
-### Phase 0: Bootstrap
-Set up the project structure, gather basic information, create initial directories. Quick and minimal.
-
-### Phase 1: Design
-The most important phase. Work with an AI agent (or team) to:
-- Ask probing questions about the project
-- Explore alternatives for each decision
-- Document decisions as Design Records
-- Build a complete design before implementation
-
-### Phase 2: Implementation
-Write code guided by the design decisions:
-- Reference DRs in your code comments
-- Follow the decisions that were made
-- Flag gaps when implementation reveals missing decisions
-
-Each phase has its own PROJECT.md template that gets copied to the root, updated, then archived when transitioning to the next phase.
-
 ## Quick Start
 
 1. **Copy this template to your new project:**
    ```bash
    cp -r documentation-driven-development-template/ my-new-project/
    cd my-new-project/
+   rm -rf .git
+   git init
    ```
 
 2. **Start with an AI agent** using this prompt:
@@ -77,6 +57,28 @@ Each phase has its own PROJECT.md template that gets copied to the root, updated
    - Transition to Phase 2
    - Write code that follows the DRs
    - Reference decisions in your code comments
+
+## How It Works
+
+This template guides you through three phases:
+
+### Phase 0: Bootstrap
+Set up the project structure, gather basic information, create initial directories. Quick and minimal.
+
+### Phase 1: Design
+The most important phase. Work with an AI agent (or team) to:
+- Ask probing questions about the project
+- Explore alternatives for each decision
+- Document decisions as Design Records
+- Build a complete design before implementation
+
+### Phase 2: Implementation
+Write code guided by the design decisions:
+- Reference DRs in your code comments
+- Follow the decisions that were made
+- Flag gaps when implementation reveals missing decisions
+
+Each phase has its own PROJECT.md template that gets copied to the root, updated, then archived when transitioning to the next phase.
 
 ## Repository Structure
 

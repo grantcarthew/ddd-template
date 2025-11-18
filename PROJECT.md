@@ -183,21 +183,34 @@ TODO: Add specific guides as features are implemented
 
 Adapt these templates based on what makes sense for this specific project.
 
-### Step 5: Update README.md
+### Step 5: Create Project README.md
 
-Ensure the project's main README.md references the new documentation structure:
+Replace the template's README.md with a project-specific README:
 
-```markdown
-## Documentation
+1. Delete or rename the template README.md:
+   ```bash
+   mv README.md README-template.md
+   ```
 
-Complete documentation is available in the `docs/` directory:
+2. Create a new README.md for this project with:
+   - Project name and description
+   - What the project does
+   - How to install/setup
+   - How to use it
+   - Link to documentation
 
-- `docs/guides/` - User guides and tutorials
-- `docs/design/` - Design decisions and architecture
-  [Add other relevant doc directories based on project type]
+3. Include a Documentation section:
+   ```markdown
+   ## Documentation
 
-For AI agents working on this project, see [AGENTS.md](AGENTS.md).
-```
+   Complete documentation is available in the `docs/` directory:
+
+   - `docs/guides/` - User guides and tutorials
+   - `docs/design/` - Design decisions and architecture
+     [Add other relevant doc directories based on project type]
+
+   For AI agents working on this project, see [AGENTS.md](AGENTS.md).
+   ```
 
 ### Step 6: Verify Bootstrap Complete
 
