@@ -26,6 +26,7 @@ Unlike traditional "documentation after the fact," DDD makes documentation a fir
 ## Quick Start
 
 1. **Clone or copy this template:**
+
    ```bash
    git clone <this-repo> my-new-project
    cd my-new-project
@@ -39,6 +40,7 @@ Unlike traditional "documentation after the fact," DDD makes documentation a fir
    - Create your first project document when ready
 
 3. **Create your first project:**
+
    ```bash
    # Create a project document for your initial work
    cp docs/projects/p-writing-guide.md docs/projects/p-001-initial-setup.md
@@ -46,6 +48,7 @@ Unlike traditional "documentation after the fact," DDD makes documentation a fir
    ```
 
 4. **Set active project in AGENTS.md:**
+
    ```markdown
    Active Project: docs/projects/p-001-initial-setup.md
    ```
@@ -61,6 +64,7 @@ Unlike traditional "documentation after the fact," DDD makes documentation a fir
 ### Projects Define What to Build
 
 Create project documents (p-001, p-002, etc.) in `docs/projects/` that define:
+
 - Goals and scope
 - Success criteria
 - Deliverables
@@ -71,6 +75,7 @@ See `docs/projects/p-writing-guide.md` for how to structure projects.
 ### Design Records Document Why
 
 As you work, create Design Records in `docs/design/design-records/` for significant decisions:
+
 - Architecture choices
 - Technology selections
 - Trade-off decisions
@@ -81,6 +86,7 @@ See `docs/design/dr-writing-guide.md` for how to write DRs.
 ### Task Documents Guide Agent Work
 
 Task documents in `docs/tasks/` provide focused guidance:
+
 - `design-phase.md` - For making and documenting design decisions
 - `implementation-phase.md` - For coding according to DRs
 
@@ -198,6 +204,7 @@ AGENTS.md (entry point)
 ### Design Records (DRs)
 
 Design Records are structured documents that capture:
+
 - **Problem** - What constraint or issue drove this decision?
 - **Decision** - What did we choose?
 - **Why** - Core reasoning behind the choice
@@ -205,6 +212,7 @@ Design Records are structured documents that capture:
 - **Alternatives** - What else we considered and why we rejected it
 
 DRs are numbered sequentially (DR-001, DR-002, etc.) and include a category in the filename:
+
 - `dr-001-config-file-format.md`
 - `dr-002-api-authentication-strategy.md`
 
@@ -213,6 +221,7 @@ See `docs/design/dr-writing-guide.md` for complete guidelines.
 ### Project Documents
 
 Project documents define work packages with:
+
 - Goals and objectives
 - Scope (in/out)
 - Success criteria
@@ -220,6 +229,7 @@ Project documents define work packages with:
 - Status tracking
 
 Projects are numbered sequentially (P-001, P-002, etc.):
+
 - `p-001-initial-architecture.md`
 - `p-002-user-authentication.md`
 
@@ -228,6 +238,7 @@ See `docs/projects/p-writing-guide.md` for complete guidelines.
 ### Task Documents
 
 Task documents in `docs/tasks/` guide agents through specific types of work:
+
 - **design-phase.md** - Making design decisions and creating DRs
 - **implementation-phase.md** - Coding according to design decisions
 - **code-review.md** - Reviewing code for quality and DR alignment
@@ -244,6 +255,7 @@ This template is optimized for AI agent collaboration:
 4. **Task documents guide behavior** - How to approach the work
 
 Example agent prompt:
+
 ```
 Read AGENTS.md, then read the active project document.
 
@@ -255,14 +267,17 @@ Design Records.
 ## Documentation
 
 ### Writing Guides
+
 - **DR Writing Guide**: `docs/design/dr-writing-guide.md`
 - **Project Writing Guide**: `docs/projects/p-writing-guide.md`
 
 ### Task Guides
+
 - **Design Phase**: `docs/tasks/design-phase.md`
 - **Implementation Phase**: `docs/tasks/implementation-phase.md`
 
 ### Indexes
+
 - **Design Records Index**: `docs/design/design-records/README.md`
 - **Projects Index**: `docs/projects/README.md`
 
@@ -271,22 +286,26 @@ Design Records.
 **Documentation Driven Development is about thinking, not bureaucracy.**
 
 Create DRs for decisions that:
+
 - Have multiple valid approaches
 - Involve trade-offs
 - Will be hard to change later
 - Future developers will wonder about
 
 Don't create DRs for:
+
 - Trivial implementation details
 - Decisions with only one reasonable option
 - Standard practices
 
 Create projects for:
+
 - Focused efforts with clear deliverables
 - Work packages that can be scoped and completed
 - Multi-step initiatives requiring planning
 
 Don't create projects for:
+
 - Single bug fixes
 - Trivial changes
 - Day-to-day maintenance

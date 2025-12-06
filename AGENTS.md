@@ -2,7 +2,7 @@
 
 TODO: Brief project description (1-2 sentences)
 
-See https://agents.md/ for the full AGENTS.md specification as this project matures.
+See <https://agents.md/> for the full AGENTS.md specification as this project matures.
 
 ## Status
 

@@ -15,6 +15,7 @@ Guides agents through design work - asking questions, exploring alternatives, ma
 **When to use:** Starting design work, making architectural decisions, documenting trade-offs.
 
 **Key activities:**
+
 - Ask probing design questions
 - Explore alternatives and trade-offs
 - Create Design Records (DRs)
@@ -27,6 +28,7 @@ Guides agents through implementation work - translating design decisions into co
 **When to use:** Writing code, implementing features, building according to design decisions.
 
 **Key activities:**
+
 - Implement according to DRs
 - Reference DRs in code comments
 - Write tests
@@ -39,6 +41,7 @@ Guides agents through comprehensive code review, ensuring correctness, maintaina
 **When to use:** Reviewing code for quality, verifying implementation matches design, identifying issues before deployment.
 
 **Key activities:**
+
 - Review code against Design Records
 - Analyze correctness, design, and quality
 - Check error handling and testing
@@ -75,6 +78,7 @@ If you identify other types of work that would benefit from focused agent guidan
 Format: `task-name.md`
 
 Each task document should:
+
 - Define the objective
 - Explain the agent's role
 - Provide workflow steps

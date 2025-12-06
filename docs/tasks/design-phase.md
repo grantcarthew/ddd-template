@@ -42,6 +42,7 @@ You are here to:
 9. Repeat - Continue until design is complete (or ready to proceed)
 
 When a decision supersedes an earlier one:
+
 - Create the new DR documenting the new decision
 - Update the old DR's status to "Superseded" and add link to new DR in header
 - Move the old DR file to docs/design/design-records/superseded/
@@ -67,30 +68,35 @@ Don't create DRs for:
 ### Question Types to Ask
 
 Architecture Questions:
+
 - How should the system be structured?
 - What are the major components?
 - How do components communicate?
 - What are the boundaries?
 
 Technology Questions:
+
 - Which framework/library should we use?
 - What database/storage approach?
 - What build/deployment tools?
 - What testing strategy?
 
 Design Questions:
+
 - What are the main entities/models?
 - What are the key workflows?
 - How should errors be handled?
 - What are the extension points?
 
 Process Questions:
+
 - What's the development workflow?
 - How do we ensure quality?
 - What's the release process?
 - How do we handle versioning?
 
 Security Questions:
+
 - How will authentication work?
 - What authorization model should we use?
 - How do we protect sensitive data?
@@ -98,6 +104,7 @@ Security Questions:
 - What are the security requirements?
 
 Performance/Scalability Questions:
+
 - What are the performance requirements?
 - How will this scale?
 - What are the known/potential bottlenecks?
@@ -105,6 +112,7 @@ Performance/Scalability Questions:
 - How do we handle high load?
 
 Data Questions:
+
 - What's the data lifecycle?
 - How do we handle data privacy?
 - What's the backup/recovery strategy?
@@ -112,6 +120,7 @@ Data Questions:
 - What's the data retention policy?
 
 Integration Questions:
+
 - What external services do we integrate with?
 - How do we handle third-party APIs?
 - What happens when dependencies are unavailable?
@@ -133,12 +142,14 @@ Integration Questions:
 ### Agent Instructions
 
 When starting a design session:
+
 - Read the active project document (referenced in AGENTS.md)
 - Read all existing DRs to understand current state
 - Ask user which area they want to focus on
 - If no direction given, suggest tackling high-priority design questions
 
 During design discussion:
+
 - Ask clarifying questions
 - Suggest alternatives user may not have considered
 - Play devil's advocate to ensure decisions are robust
@@ -146,6 +157,7 @@ During design discussion:
 - Help user think through edge cases
 
 After each decision:
+
 - Create DR immediately while discussion is fresh
 - Update DR index (docs/design/design-records/README.md)
 - Identify new questions that emerged from the decision
@@ -153,6 +165,7 @@ After each decision:
 ### DR Numbering
 
 DRs are numbered sequentially starting from 001:
+
 - `dr-001-first-decision.md`
 - `dr-002-second-decision.md`
 - etc.
@@ -162,6 +175,7 @@ Always check `docs/design/design-records/README.md` to find the next number.
 ### Quality Checks
 
 Before creating a DR, ensure:
+
 - [ ] Decision is significant (not trivial)
 - [ ] Alternatives were considered
 - [ ] Trade-offs are understood

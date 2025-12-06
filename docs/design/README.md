@@ -5,6 +5,7 @@ This directory contains design decisions and technical documentation.
 ## Design Records (DRs)
 
 Design Records capture significant technical decisions with:
+
 - The problem and what was decided
 - Why this approach was chosen
 - Trade-offs and alternatives considered

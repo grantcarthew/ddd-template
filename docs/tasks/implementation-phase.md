@@ -62,6 +62,7 @@ You are here to:
 ### When Design Doesn't Cover Something
 
 If you encounter a situation where:
+
 - No DR exists for a needed decision
 - Existing DR is ambiguous or incomplete
 - Implementation reveals a design gap
@@ -91,23 +92,28 @@ Note: Small implementation details don't need DRs. Only create new DRs for decis
 ### Agent Instructions
 
 When starting an implementation session:
+
 - Read all DRs (or at minimum, the critical ones)
 - Read the active project document for current context
 - Ask user what to work on
 - Check what's already implemented
 
 During implementation:
+
 - Keep DRs in mind - implement according to decisions
 - Add comments linking code to DRs when implementing decision points
+
   ```python
   # Use PostgreSQL for persistence (see DR-023)
   # Chose connection pooling to handle concurrent requests (see DR-031)
   ```
+
 - If you discover a missing decision, document it and ask
 - Write clean, maintainable code following project guidelines
 - Write tests as you go (don't leave for later)
 
 After implementing:
+
 - Update the active project document with progress
 - If you created new DRs (for gaps), update DR index
 - Ensure continuity for the next session
@@ -117,6 +123,7 @@ After implementing:
 When implementing a decision point, add a comment:
 
 Good examples:
+
 ```python
 # Singleton pattern for database connection (DR-015)
 class DatabaseConnection:
@@ -134,6 +141,7 @@ jobs := make(chan Job, 100)
 ```
 
 When to add DR references:
+
 - Architectural patterns
 - Algorithm choices
 - Error handling approaches
@@ -144,6 +152,7 @@ When to add DR references:
 ### Quality Checks
 
 Before marking a component complete:
+
 - [ ] Implements all requirements from relevant DRs
 - [ ] Follows code style guidelines from DRs
 - [ ] Has tests (unit, integration as appropriate)
