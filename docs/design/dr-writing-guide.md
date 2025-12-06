@@ -8,6 +8,17 @@ Read when: Writing/updating DRs or reconciling docs.
 
 ---
 
+## Markdown Formatting Note
+
+IMPORTANT: Avoid using bold markdown (`**text**`) in design records. Bold formatting adds no semantic value to large language models but significantly increases token count. Use section headers, lists, and clear structure instead.
+
+Good: Use `## Section Name` and bullet points
+Bad: Use `**Section Name:**` with bold
+
+Note: This guidance applies to DR and Project documents consumed by AI agents. Human-facing documentation may use bold for readability.
+
+---
+
 ## DR Schema
 
 DR structure:
@@ -252,10 +263,25 @@ Would a future developer need to understand WHY we made this choice?
 
 ## DR Numbering and Lifecycle
 
+### File Naming Convention
+
+Format: `dr-<NNN>-<category>-<title>.md`
+
+- `NNN` = Three-digit number with leading zeros (001, 002, 003...)
+- `category` = Technology/component/area (config, api, data, cli, etc.)
+- `title` = KISS description of the decision
+- All lowercase kebab-case (words separated by hyphens, no underscores or spaces)
+
+Examples:
+- `dr-001-config-file-format.md`
+- `dr-002-api-authentication-strategy.md`
+- `dr-003-data-storage-structure.md`
+- `dr-004-cli-command-organization.md`
+
 ### Numbering
 
 - Sequential: DR-001, DR-002, DR-003, etc.
-- Gaps are acceptable (superseded/deprecated DRs)
+- Gaps are acceptable (superseded DRs)
 - Never reuse numbers
 - Get next number from `design-records/README.md` index
 
@@ -263,8 +289,7 @@ Would a future developer need to understand WHY we made this choice?
 
 - Proposed - Under consideration, not implemented
 - Accepted - Approved and in use (or in progress)
-- Superseded - Replaced by newer DR, link in header
-- Deprecated - No longer recommended, may exist in legacy code
+- Superseded - Replaced by newer DR, link in header, move to `superseded/`
 
 ---
 
@@ -349,18 +374,13 @@ JSON:
 
 ---
 
-## Keeping Documentation Current
+## Reconciliation Process
 
-Update as changes occur:
-
-1. Update DR index immediately when creating, superseding, or deprecating DRs
-2. Update DR status when decisions are implemented (Proposed → Accepted)
-3. Move superseded DRs to `superseded/` directory and update index
-4. Remove completed TODOs as work progresses
-
-Periodic review (when convenient):
+After design changes:
 
 1. Remove deprecated references: `rg "old-pattern" docs/`
-2. Verify DR index matches actual files in `design-records/`
-3. Check for stale TODOs: `rg "TODO|TBD|to be written" docs/`
-4. Verify examples in DRs still match current implementation
+2. Update DR index in `design-records/README.md` with current status
+3. Check DR status accuracy (Proposed → Accepted, Deprecated, Superseded?)
+4. Remove stale TODOs: `rg "TODO|TBD|to be written" docs/`
+5. Verify examples match current schema
+6. Remove any "Related Decisions" sections from DRs

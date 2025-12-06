@@ -8,6 +8,12 @@ See https://agents.md/ for the full AGENTS.md specification as this project matu
 
 Under active development.
 
+## Active Project
+
+Projects are stored in the docs/projects/ directory. Update this when starting a new project.
+
+Active Project: docs/projects/p-001-project-initialization.md
+
 ## Quick Reference
 
 TODO: Add basic commands as they become known during design/implementation

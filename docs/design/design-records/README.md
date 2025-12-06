@@ -2,20 +2,10 @@
 
 Design Records (DRs) document significant technical decisions made during development. Each DR captures the context, decision, alternatives considered, and consequences. See [dr-writing-guide.md](../dr-writing-guide.md) for guidelines on writing DRs.
 
-## Active DRs
+## Design Records
 
 | Number | Title | Status | Date |
 | ------ | ----- | ------ | ---- |
 | -      | -     | -      | -    |
 
-## Superseded DRs
-
-| Number | Title | Superseded By | Date |
-| ------ | ----- | ------------- | ---- |
-| -      | -     | -             | -    |
-
-## Deprecated DRs
-
-| Number | Title | Reason | Date |
-| ------ | ----- | ------ | ---- |
-| -      | -     | -      | -    |
+Note: Superseded design records are in `superseded/`

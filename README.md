@@ -25,81 +25,170 @@ Unlike traditional "documentation after the fact," DDD makes documentation a fir
 
 ## Quick Start
 
-1. **Copy this template to your new project:**
+1. **Clone or copy this template:**
    ```bash
-   cp -r documentation-driven-development-template/ my-new-project/
-   cd my-new-project/
+   git clone <this-repo> my-new-project
+   cd my-new-project
    rm -rf .git
    git init
    ```
 
-2. **Start with an AI agent** using this prompt:
+2. **Update AGENTS.md:**
+   - Replace `[Project Name]` with your project name
+   - Add a brief description
+   - Create your first project document when ready
+
+3. **Create your first project:**
+   ```bash
+   # Create a project document for your initial work
+   cp docs/projects/p-writing-guide.md docs/projects/p-001-initial-setup.md
+   # Edit p-001 with your project goals and scope
    ```
-   I'm starting a new project using Documentation Driven Development.
 
-   Please read PROJECT.md first, then follow the bootstrap instructions
-   to help me set up the project structure.
-
-   After that, we'll move into the design phase where we'll create
-   Design Records for all major decisions.
+4. **Set active project in AGENTS.md:**
+   ```markdown
+   Active Project: docs/projects/p-001-initial-setup.md
    ```
 
-3. **The agent will:**
-   - Ask you questions about your project
-   - Create appropriate directory structure
-   - Update AGENTS.md with basic info
-   - Guide you through Phase 0 → Phase 1 transition
-
-4. **Begin designing:**
-   - Work interactively with the agent to make design decisions
-   - Each decision becomes a Design Record
-   - Build up a complete design before coding
-
-5. **Implement:**
-   - Transition to Phase 2
-   - Write code that follows the DRs
-   - Reference decisions in your code comments
+5. **Start working with an AI agent:**
+   - Agent reads AGENTS.md to find the active project
+   - Agent reads the active project document
+   - Agent follows task documents (design-phase.md or implementation-phase.md) as needed
+   - Agent creates Design Records for significant decisions
 
 ## How It Works
 
-This template guides you through three phases:
+### Projects Define What to Build
 
-### Phase 0: Bootstrap
-Set up the project structure, gather basic information, create initial directories. Quick and minimal.
+Create project documents (p-001, p-002, etc.) in `docs/projects/` that define:
+- Goals and scope
+- Success criteria
+- Deliverables
+- Status tracking
 
-### Phase 1: Design
-The most important phase. Work with an AI agent (or team) to:
-- Ask probing questions about the project
-- Explore alternatives for each decision
-- Document decisions as Design Records
-- Build a complete design before implementation
+See `docs/projects/p-writing-guide.md` for how to structure projects.
 
-### Phase 2: Implementation
-Write code guided by the design decisions:
-- Reference DRs in your code comments
-- Follow the decisions that were made
-- Flag gaps when implementation reveals missing decisions
+### Design Records Document Why
 
-Each phase has its own PROJECT.md template that gets copied to the root, updated, then archived when transitioning to the next phase.
+As you work, create Design Records in `docs/design/design-records/` for significant decisions:
+- Architecture choices
+- Technology selections
+- Trade-off decisions
+- Algorithm designs
+
+See `docs/design/dr-writing-guide.md` for how to write DRs.
+
+### Task Documents Guide Agent Work
+
+Task documents in `docs/tasks/` provide focused guidance:
+- `design-phase.md` - For making and documenting design decisions
+- `implementation-phase.md` - For coding according to DRs
+
+Reference these in your project documents or AGENTS.md to guide agent behavior.
+
+### Workflow Diagram
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│ 1. CLONE TEMPLATE                                               │
+│    - Template includes p-001-bootstrap-template.md              │
+│    - Update AGENTS.md with your project name/description        │
+│    - Active project already set to p-001                        │
+└─────────────────────┬───────────────────────────────────────────┘
+                      │
+                      ▼
+┌─────────────────────────────────────────────────────────────────┐
+│ 2. DESIGN PHASE (docs/tasks/design-phase.md)                    │
+│    Agent reads:                                                 │
+│    - AGENTS.md → finds active project (p-001)                   │
+│    - p-001 → understands goals                                  │
+│    - Existing DRs → learns previous decisions                   │
+│                                                                 │
+│    Agent activities:                                            │
+│    - Ask design questions, explore alternatives                 │
+│    - Create Design Records (DR-NNN-*.md)                        │
+│    - Update docs/design/design-records/README.md                │
+└─────────────────────┬───────────────────────────────────────────┘
+                      │
+                      ▼
+┌─────────────────────────────────────────────────────────────────┐
+│ 3. IMPLEMENTATION PHASE (docs/tasks/implementation-phase.md)    │
+│    Agent reads:                                                 │
+│    - All DRs → understand design decisions                      │
+│    - Active project → know what to build                        │
+│                                                                 │
+│    Agent activities:                                            │
+│    - Implement according to DRs                                 │
+│    - Add DR references in code comments                         │
+│    - Write tests, create new DRs if gaps found                  │
+└─────────────────────┬───────────────────────────────────────────┘
+                      │
+                      ▼
+┌─────────────────────────────────────────────────────────────────┐
+│ 4. CODE REVIEW (docs/tasks/code-review.md)                      │
+│    - Review correctness, design, testing                        │
+│    - Verify DR alignment                                        │
+│    - Create rectification project if issues found               │
+└─────────────────────┬───────────────────────────────────────────┘
+                      │
+                      ▼
+┌─────────────────────────────────────────────────────────────────┐
+│ 5. PROJECT COMPLETION                                           │
+│    - Verify success criteria met                                │
+│    - Status: Proposed → In Progress → Completed                 │
+│    - Move to docs/projects/completed/                           │
+└─────────────────────┬───────────────────────────────────────────┘
+                      │
+                      ▼
+┌─────────────────────────────────────────────────────────────────┐
+│ 6. NEXT PROJECT                                                 │
+│    - Create p-002-*.md (or p-NNN)                               │
+│    - Set as active in AGENTS.md                                 │
+│    - Repeat cycle                                               │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Document Relationships
+
+```
+AGENTS.md (entry point)
+    │
+    ├─→ Active Project: docs/projects/p-NNN-*.md
+    │       │
+    │       ├─→ References: docs/tasks/design-phase.md
+    │       │                   │
+    │       │                   └─→ Creates: DR-NNN-*.md
+    │       │
+    │       └─→ References: docs/tasks/implementation-phase.md
+    │                   │
+    │                   └─→ Reads DRs → Implements → References DRs in code
+    │
+    └─→ Quick Reference (populated as project develops)
+```
 
 ## Repository Structure
 
 ```
 .
-├── PROJECT.md                    # Phase 0: Bootstrap guide (gets replaced each phase)
-├── AGENTS.md                     # Agent instructions (grows throughout project)
-├── LICENSE                       # MIT license with template usage notice
+├── README.md                     # This file - DDD overview
+├── AGENTS.md                     # Agent entry point and active project
+├── LICENSE                       # MIT license
 ├── docs/
 │   ├── design/
-│   │   ├── dr-writing-guide.md  # How to write Design Records
 │   │   ├── README.md            # Design docs overview
-│   │   └── design-records/      # Individual DR files go here
+│   │   ├── dr-writing-guide.md  # How to write Design Records
+│   │   └── design-records/
 │   │       ├── README.md        # DR index
-│   │       └── superseded/      # Replaced DRs (kept for history)
-│   ├── templates/
-│   │   ├── PROJECT-phase1-design.md        # Template for design phase
-│   │   └── PROJECT-phase2-implementation.md # Template for implementation phase
-│   ├── archive/                 # Archived PROJECT.md files from completed phases
+│   │       └── superseded/      # Superseded DRs (kept for history)
+│   ├── projects/
+│   │   ├── README.md            # Project index
+│   │   ├── p-writing-guide.md   # How to write project documents
+│   │   └── completed/           # Completed projects
+│   ├── tasks/
+│   │   ├── README.md            # Task documents overview
+│   │   ├── design-phase.md      # Guide for design work
+│   │   ├── implementation-phase.md # Guide for implementation work
+│   │   └── code-review.md       # Guide for code review
 │   └── thoughts.md              # Brainstorming and ideas
 └── .gitignore
 ```
@@ -109,53 +198,73 @@ Each phase has its own PROJECT.md template that gets copied to the root, updated
 ### Design Records (DRs)
 
 Design Records are structured documents that capture:
-- **Context** - What problem are we solving?
+- **Problem** - What constraint or issue drove this decision?
 - **Decision** - What did we choose?
-- **Alternatives** - What else did we consider?
-- **Consequences** - What are the trade-offs?
+- **Why** - Core reasoning behind the choice
+- **Trade-offs** - What we accept vs. what we gain
+- **Alternatives** - What else we considered and why we rejected it
+
+DRs are numbered sequentially (DR-001, DR-002, etc.) and include a category in the filename:
+- `dr-001-config-file-format.md`
+- `dr-002-api-authentication-strategy.md`
 
 See `docs/design/dr-writing-guide.md` for complete guidelines.
 
-### PROJECT.md Lifecycle
+### Project Documents
 
-The PROJECT.md file at the root is the "current context" for AI agents:
-- **Phase 0** - Bootstrap instructions
-- **Phase 1** - Design phase context and open questions
-- **Phase 2** - Implementation status and DR references
+Project documents define work packages with:
+- Goals and objectives
+- Scope (in/out)
+- Success criteria
+- Deliverables
+- Status tracking
 
-After each phase completes, archive the current PROJECT.md and copy the next phase template.
+Projects are numbered sequentially (P-001, P-002, etc.):
+- `p-001-initial-architecture.md`
+- `p-002-user-authentication.md`
 
-### AGENTS.md Evolution
+See `docs/projects/p-writing-guide.md` for complete guidelines.
 
-Starts minimal during bootstrap, grows naturally:
-- **Bootstrap** - Just name, description
-- **Design** - Add architecture decisions, key DRs
-- **Implementation** - Add setup commands, code structure
-- **Completion** - Fully detailed per https://agents.md/
+### Task Documents
+
+Task documents in `docs/tasks/` guide agents through specific types of work:
+- **design-phase.md** - Making design decisions and creating DRs
+- **implementation-phase.md** - Coding according to design decisions
+- **code-review.md** - Reviewing code for quality and DR alignment
+
+Reference these in project documents or AGENTS.md when you want focused agent behavior. They provide detailed workflows and instructions for agents working on different phases of development.
 
 ## Working With AI Agents
 
 This template is optimized for AI agent collaboration:
 
-1. **Agents read PROJECT.md first** - It tells them what phase you're in and what to do
-2. **DRs provide continuity** - New agent sessions can catch up by reading DRs
-3. **Clear instructions** - Each phase template has explicit agent guidance
-4. **Session memory** - "Next Steps" sections help agents know where to continue
+1. **AGENTS.md is the entry point** - Points to the active project
+2. **Active project provides context** - What we're working on now
+3. **DRs provide continuity** - Why decisions were made
+4. **Task documents guide behavior** - How to approach the work
+
+Example agent prompt:
+```
+Read AGENTS.md, then read the active project document.
+
+We're working on design decisions for the authentication system.
+Follow docs/tasks/design-phase.md to help explore options and create
+Design Records.
+```
 
 ## Documentation
 
+### Writing Guides
 - **DR Writing Guide**: `docs/design/dr-writing-guide.md`
-- **Phase 0 Bootstrap**: `PROJECT.md` (in root after template copy)
-- **Phase 1 Design**: `docs/templates/PROJECT-phase1-design.md`
-- **Phase 2 Implementation**: `docs/templates/PROJECT-phase2-implementation.md`
+- **Project Writing Guide**: `docs/projects/p-writing-guide.md`
 
-## Examples
+### Task Guides
+- **Design Phase**: `docs/tasks/design-phase.md`
+- **Implementation Phase**: `docs/tasks/implementation-phase.md`
 
-Want to see what a good Design Record looks like? Check `docs/design/dr-writing-guide.md` for:
-- DR structure and format
-- Categories (Architecture, Design, Technical, Process, Product)
-- YAML frontmatter examples
-- When to create vs. when to skip DRs
+### Indexes
+- **Design Records Index**: `docs/design/design-records/README.md`
+- **Projects Index**: `docs/projects/README.md`
 
 ## Philosophy
 
@@ -172,7 +281,17 @@ Don't create DRs for:
 - Decisions with only one reasonable option
 - Standard practices
 
-The goal is to capture the "why" behind meaningful choices, not document every line of code.
+Create projects for:
+- Focused efforts with clear deliverables
+- Work packages that can be scoped and completed
+- Multi-step initiatives requiring planning
+
+Don't create projects for:
+- Single bug fixes
+- Trivial changes
+- Day-to-day maintenance
+
+The goal is to capture meaningful decisions and organize substantial work, not document everything.
 
 ## License
 
@@ -186,4 +305,4 @@ This is a template repository. If you have improvements to the template itself, 
 
 ---
 
-**Ready to build something thoughtfully?** Copy this template and start your DDD journey.
+**Ready to build something thoughtfully?** Clone this template and start your DDD journey.
