@@ -26,4 +26,8 @@ This project uses Documentation Driven Development. Design decisions are documen
 
 For complete DR writing guidelines: See [docs/design/dr-writing-guide.md](docs/design/dr-writing-guide.md)
 
+For project writing guidelines: See [docs/projects/p-writing-guide.md](docs/projects/p-writing-guide.md)
+
+For feature development workflow: See [docs/workflow.md](docs/workflow.md)
+
 Location: `docs/design/design-records/`

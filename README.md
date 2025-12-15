@@ -271,6 +271,10 @@ Design Records.
 - **DR Writing Guide**: `docs/design/dr-writing-guide.md`
 - **Project Writing Guide**: `docs/projects/p-writing-guide.md`
 
+### Workflow Guide
+
+- **Feature Development Workflow**: `docs/workflow.md` - Interactive step-by-step process for developing features collaboratively
+
 ### Task Guides
 
 - **Design Phase**: `docs/tasks/design-phase.md`

@@ -4,6 +4,8 @@ This directory contains task documents that guide AI agents through different ty
 
 Task documents provide focused instructions for specific activities like design work or implementation work. They're meant to be read by agents when starting a particular type of task.
 
+For an overarching interactive workflow that coordinates these tasks, see [docs/workflow.md](../workflow.md).
+
 ---
 
 ## Available Tasks
