@@ -43,14 +43,14 @@ Unlike traditional "documentation after the fact," DDD makes documentation a fir
 
    ```bash
    # Create a project document for your initial work
-   cp docs/projects/p-writing-guide.md docs/projects/p-001-initial-setup.md
+   cp .ai/projects/p-writing-guide.md .ai/projects/p-001-initial-setup.md
    # Edit p-001 with your project goals and scope
    ```
 
 4. **Set active project in AGENTS.md:**
 
    ```markdown
-   Active Project: docs/projects/p-001-initial-setup.md
+   Active Project: .ai/projects/p-001-initial-setup.md
    ```
 
 5. **Start working with an AI agent:**
@@ -63,29 +63,29 @@ Unlike traditional "documentation after the fact," DDD makes documentation a fir
 
 ### Projects Define What to Build
 
-Create project documents (p-001, p-002, etc.) in `docs/projects/` that define:
+Create project documents (p-001, p-002, etc.) in `.ai/projects/` that define:
 
 - Goals and scope
 - Success criteria
 - Deliverables
 - Status tracking
 
-See `docs/projects/p-writing-guide.md` for how to structure projects.
+See `.ai/projects/p-writing-guide.md` for how to structure projects.
 
 ### Design Records Document Why
 
-As you work, create Design Records in `docs/design/design-records/` for significant decisions:
+As you work, create Design Records in `.ai/design/design-records/` for significant decisions:
 
 - Architecture choices
 - Technology selections
 - Trade-off decisions
 - Algorithm designs
 
-See `docs/design/dr-writing-guide.md` for how to write DRs.
+See `.ai/design/dr-writing-guide.md` for how to write DRs.
 
 ### Task Documents Guide Agent Work
 
-Task documents in `docs/tasks/` provide focused guidance:
+Task documents in `.ai/tasks/` provide focused guidance:
 
 - `design-phase.md` - For making and documenting design decisions
 - `implementation-phase.md` - For coding according to DRs
@@ -104,7 +104,7 @@ Reference these in your project documents or AGENTS.md to guide agent behavior.
                       │
                       ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│ 2. DESIGN PHASE (docs/tasks/design-phase.md)                    │
+│ 2. DESIGN PHASE (.ai/tasks/design-phase.md)                    │
 │    Agent reads:                                                 │
 │    - AGENTS.md → finds active project (p-001)                   │
 │    - p-001 → understands goals                                  │
@@ -113,12 +113,12 @@ Reference these in your project documents or AGENTS.md to guide agent behavior.
 │    Agent activities:                                            │
 │    - Ask design questions, explore alternatives                 │
 │    - Create Design Records (DR-NNN-*.md)                        │
-│    - Update docs/design/design-records/README.md                │
+│    - Update .ai/design/design-records/README.md                │
 └─────────────────────┬───────────────────────────────────────────┘
                       │
                       ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│ 3. IMPLEMENTATION PHASE (docs/tasks/implementation-phase.md)    │
+│ 3. IMPLEMENTATION PHASE (.ai/tasks/implementation-phase.md)    │
 │    Agent reads:                                                 │
 │    - All DRs → understand design decisions                      │
 │    - Active project → know what to build                        │
@@ -131,7 +131,7 @@ Reference these in your project documents or AGENTS.md to guide agent behavior.
                       │
                       ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│ 4. CODE REVIEW (docs/tasks/code-review.md)                      │
+│ 4. CODE REVIEW (.ai/tasks/code-review.md)                      │
 │    - Review correctness, design, testing                        │
 │    - Verify DR alignment                                        │
 │    - Create rectification project if issues found               │
@@ -141,8 +141,8 @@ Reference these in your project documents or AGENTS.md to guide agent behavior.
 ┌─────────────────────────────────────────────────────────────────┐
 │ 5. PROJECT COMPLETION                                           │
 │    - Verify success criteria met                                │
-│    - Status: Proposed → In Progress → Completed                 │
-│    - Move to docs/projects/completed/                           │
+│    - Status: Pending → Active → Completed                       │
+│    - Move to .ai/projects/completed/                           │
 └─────────────────────┬───────────────────────────────────────────┘
                       │
                       ▼
@@ -159,13 +159,13 @@ Reference these in your project documents or AGENTS.md to guide agent behavior.
 ```
 AGENTS.md (entry point)
     │
-    ├─→ Active Project: docs/projects/p-NNN-*.md
+    ├─→ Active Project: .ai/projects/p-NNN-*.md
     │       │
-    │       ├─→ References: docs/tasks/design-phase.md
+    │       ├─→ References: .ai/tasks/design-phase.md
     │       │                   │
     │       │                   └─→ Creates: DR-NNN-*.md
     │       │
-    │       └─→ References: docs/tasks/implementation-phase.md
+    │       └─→ References: .ai/tasks/implementation-phase.md
     │                   │
     │                   └─→ Reads DRs → Implements → References DRs in code
     │
@@ -179,7 +179,9 @@ AGENTS.md (entry point)
 ├── README.md                     # This file - DDD overview
 ├── AGENTS.md                     # Agent entry point and active project
 ├── LICENSE                       # MIT license
-├── docs/
+├── .ai/                          # AI agent working files
+│   ├── README.md                # .ai directory overview
+│   ├── workflow.md              # Feature development workflow
 │   ├── design/
 │   │   ├── README.md            # Design docs overview
 │   │   ├── dr-writing-guide.md  # How to write Design Records
@@ -190,11 +192,12 @@ AGENTS.md (entry point)
 │   │   ├── README.md            # Project index
 │   │   ├── p-writing-guide.md   # How to write project documents
 │   │   └── completed/           # Completed projects
-│   ├── tasks/
-│   │   ├── README.md            # Task documents overview
-│   │   ├── design-phase.md      # Guide for design work
-│   │   ├── implementation-phase.md # Guide for implementation work
-│   │   └── code-review.md       # Guide for code review
+│   └── tasks/
+│       ├── README.md            # Task documents overview
+│       ├── design-phase.md      # Guide for design work
+│       ├── implementation-phase.md # Guide for implementation work
+│       └── code-review.md       # Guide for code review
+├── docs/                         # Human-facing documentation
 │   └── thoughts.md              # Brainstorming and ideas
 └── .gitignore
 ```
@@ -211,12 +214,12 @@ Design Records are structured documents that capture:
 - **Trade-offs** - What we accept vs. what we gain
 - **Alternatives** - What else we considered and why we rejected it
 
-DRs are numbered sequentially (DR-001, DR-002, etc.) and include a category in the filename:
+DRs are numbered sequentially (dr-001, dr-002, etc.) and include a category in the filename:
 
 - `dr-001-config-file-format.md`
 - `dr-002-api-authentication-strategy.md`
 
-See `docs/design/dr-writing-guide.md` for complete guidelines.
+See `.ai/design/dr-writing-guide.md` for complete guidelines.
 
 ### Project Documents
 
@@ -228,16 +231,16 @@ Project documents define work packages with:
 - Deliverables
 - Status tracking
 
-Projects are numbered sequentially (P-001, P-002, etc.):
+Projects are numbered sequentially (p-001, p-002, etc.):
 
 - `p-001-initial-architecture.md`
 - `p-002-user-authentication.md`
 
-See `docs/projects/p-writing-guide.md` for complete guidelines.
+See `.ai/projects/p-writing-guide.md` for complete guidelines.
 
 ### Task Documents
 
-Task documents in `docs/tasks/` guide agents through specific types of work:
+Task documents in `.ai/tasks/` guide agents through specific types of work:
 
 - **design-phase.md** - Making design decisions and creating DRs
 - **implementation-phase.md** - Coding according to design decisions
@@ -260,7 +263,7 @@ Example agent prompt:
 Read AGENTS.md, then read the active project document.
 
 We're working on design decisions for the authentication system.
-Follow docs/tasks/design-phase.md to help explore options and create
+Follow .ai/tasks/design-phase.md to help explore options and create
 Design Records.
 ```
 
@@ -268,22 +271,22 @@ Design Records.
 
 ### Writing Guides
 
-- **DR Writing Guide**: `docs/design/dr-writing-guide.md`
-- **Project Writing Guide**: `docs/projects/p-writing-guide.md`
+- **DR Writing Guide**: `.ai/design/dr-writing-guide.md`
+- **Project Writing Guide**: `.ai/projects/p-writing-guide.md`
 
 ### Workflow Guide
 
-- **Feature Development Workflow**: `docs/workflow.md` - Interactive step-by-step process for developing features collaboratively
+- **Feature Development Workflow**: `.ai/workflow.md` - Interactive step-by-step process for developing features collaboratively
 
 ### Task Guides
 
-- **Design Phase**: `docs/tasks/design-phase.md`
-- **Implementation Phase**: `docs/tasks/implementation-phase.md`
+- **Design Phase**: `.ai/tasks/design-phase.md`
+- **Implementation Phase**: `.ai/tasks/implementation-phase.md`
 
 ### Indexes
 
-- **Design Records Index**: `docs/design/design-records/README.md`
-- **Projects Index**: `docs/projects/README.md`
+- **Design Records Index**: `.ai/design/design-records/README.md`
+- **Projects Index**: `.ai/projects/README.md`
 
 ## Philosophy
 

@@ -10,7 +10,7 @@ See [p-writing-guide.md](./p-writing-guide.md) for guidelines on creating and ma
 
 | Project | Title | Status | Started | Completed |
 |---------|-------|--------|---------|-----------|
-| P-001 | Project Initialization | Proposed | - | - |
+| p-001 | Project Initialization | Pending | - | - |
 
 Note: Completed projects are in `completed/`
 
@@ -18,18 +18,18 @@ Note: Completed projects are in `completed/`
 
 ## Status Values
 
-- **Proposed** - Project defined, not yet started
-- **In Progress** - Currently being worked on
-- **Completed** - All success criteria met, deliverables created (move to `completed/`)
-- **Blocked** - Waiting on external dependency or decision
+- Pending - Project defined, not yet started
+- Active - Currently being worked on
+- Blocked - Waiting on external dependency or decision
+- Completed - All success criteria met, deliverables created (move to `completed/`)
 
 ---
 
 ## Projects vs Design Records
 
-**Projects** are work packages that define **what to build** and **how to validate it**.
+Projects are work packages that define what to build and how to validate it.
 
-**Design Records (DRs)** document **why we chose** a specific approach and the trade-offs.
+Design Records (DRs) document why we chose a specific approach and the trade-offs.
 
 A single project may generate multiple DRs. Projects describe the work; DRs document the decisions made during that work.
 
@@ -41,7 +41,7 @@ See [p-writing-guide.md](./p-writing-guide.md) for detailed guidance.
 
 When creating a new project:
 
-1. List directory to find next number: `ls docs/projects/p-*.md`
+1. List directory to find next number: `ls .ai/projects/p-*.md`
 2. Use format: `p-<NNN>-<category>-<title>.md`
 3. Follow the structure in [p-writing-guide.md](./p-writing-guide.md)
 4. Define clear, measurable success criteria
